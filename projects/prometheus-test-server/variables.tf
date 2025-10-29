@@ -3,7 +3,6 @@ variable "test_server_ami" {
   default = ""
 }
 
-
 variable "test_server_instance_type" {
   type    = string
   default = "t2.micro"
