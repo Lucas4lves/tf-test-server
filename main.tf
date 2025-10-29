@@ -1,6 +1,6 @@
-module "test-server" {
-  source                        = "./modules/test-server"
-  test_server_availability_zone = var.test_server_availability_zone
-  test_server_instance_type     = var.test_server_instance_type
-  test_server_tags              = var.test_server_tags
+resource "aws_instance" "test-server" {
+  instance_type     = var.test_server_instance_type
+  availability_zone = var.test_server_availability_zone
+  tags              = var.test_server_tags
+  ami               = var.test_server_ami
 }
