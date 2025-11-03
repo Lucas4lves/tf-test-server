@@ -13,14 +13,14 @@ resource "aws_internet_gateway" "this" {
 
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.this.id
-  cidr_block              = var.test_server_vpc_cidr_block
+  cidr_block              = var.public_subnet_cidr_block
   map_public_ip_on_launch = true
 }
 
 resource "aws_route_table" "public_route_table" {
   vpc_id = aws_vpc.this.id
   route {
-    cidr_block = var.test_server_vpc_cidr_block
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.this.id
   }
 

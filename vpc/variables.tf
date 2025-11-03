@@ -13,6 +13,11 @@ variable "test_server_vpc_enable_dns_support" {
   default = true
 }
 
+variable "public_subnet_cidr_block" {
+  type    = string
+  default = "10.0.0.0/24"
+}
+
 variable "test_server_vpc_tags" {
   type    = map(string)
   default = {}
