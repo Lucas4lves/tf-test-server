@@ -49,3 +49,13 @@ variable "route_table_tags" {
   type    = map(string)
   default = {}
 }
+
+variable "key_pair_name" {
+  type    = string
+  default = ""
+}
+
+variable "security_group_name" {
+  type = string
+  default = ""
+}
