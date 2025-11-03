@@ -1,11 +1,17 @@
-variable "test_server_ami" {
-  type    = string
-  default = ""
-}
-
+# =======================================================
+# GENERAL CONFIG
+# =======================================================
 variable "aws_region" {
   type    = string
   default = "us-east-1"
+}
+
+# =======================================================
+# EC2 CONFIG
+# =======================================================
+variable "test_server_ami" {
+  type    = string
+  default = ""
 }
 
 variable "test_server_instance_type" {
@@ -13,28 +19,30 @@ variable "test_server_instance_type" {
   default = "t2.micro"
 }
 
-variable "test_server_tags" {
-  type = map(string)
-  default = {
-    "test" = "true"
-  }
+variable "key_pair_name" {
+  type    = string
+  default = ""
 }
 
+# =======================================================
+# SECURITY GROUP CONFIG
+# =======================================================
+variable "security_group_name" {
+  type    = string
+  default = ""
+}
+
+# =======================================================
+# NETWORKING CONFIG
+# =======================================================
 variable "test_server_vpc_cidr_block" {
   type    = string
   default = "10.0.0.0/16"
 }
 
-variable "test_server_vpc_enable_dns_hostnames" {
-  type    = bool
-  default = true
-}
-
-variable "test_server_vpc_enable_dns_support" {
-  type    = bool
-  default = true
-}
-
+# =======================================================
+# RESOURCES TAGGING
+# =======================================================
 variable "test_server_vpc_tags" {
   type    = map(string)
   default = {}
@@ -50,12 +58,10 @@ variable "route_table_tags" {
   default = {}
 }
 
-variable "key_pair_name" {
-  type    = string
-  default = ""
+variable "test_server_tags" {
+  type = map(string)
+  default = {
+    "test" = "true"
+  }
 }
 
-variable "security_group_name" {
-  type = string
-  default = ""
-}
