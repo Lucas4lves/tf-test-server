@@ -11,3 +11,8 @@ variable "security_group_name" {
   type = string
   default = ""
 }
+
+variable "ssh_connection_source_ip_cidr" {
+  type = string
+  default = ""
+}
